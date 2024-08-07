@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "sprin.jpa.hibernate.format_sql",
+    "type": "java.lang.String",
+    "description": "A description for 'sprin.jpa.hibernate.format_sql'"
+  },
+  {
+    "name": "sprin.jpa.show-sql",
+    "type": "java.lang.String",
+    "description": "A description for 'sprin.jpa.show-sql'"
+  }
+]}

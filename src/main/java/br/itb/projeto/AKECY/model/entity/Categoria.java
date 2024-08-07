@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,21 +14,27 @@ public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nome;
+	private long Cod_categoria;
+	private String Descrição_Categoria;
 	
-	// Source -> Generate Getters and Setters...
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	@ManyToOne
+	@JoinColumn(name = "Id_produto")
+	private Produto produto;
 	
+	
+	public long getCod_categoria() {
+		return Cod_categoria;
+	}
+	public void setCod_categoria(long cod_categoria) {
+		Cod_categoria = cod_categoria;
+	}
+	public String getDescrição_Categoria() {
+		return Descrição_Categoria;
+	}
+	public void setDescrição_Categoria(String descrição_Categoria) {
+		Descrição_Categoria = descrição_Categoria;
+	}
 }
+
+	
+
