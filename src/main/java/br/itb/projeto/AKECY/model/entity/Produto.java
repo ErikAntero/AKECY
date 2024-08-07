@@ -13,26 +13,49 @@ import jakarta.persistence.Table;
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long id_produto;
 	private String nome;
 	private String descricao;
 	private String codigoBarras;
 	private byte[] foto;
 	private String urlFoto;
 	private double preco;
+	private String tam;
+	private String cor;
 	
+	@ManyToOne
+	@JoinColumn(name = "Cod_itens_pedidos")
+	private Itens_pedido itens_pedido;
+	
+	public String getTam() {
+		return tam;
+	}
+
+	public void setTam(String tam) {
+		this.tam = tam;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 	
 	private String statusProd;
 
-	public long getId() {
-		return id;
+
+	public long getId_produto() {
+		return id_produto;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId_produto(long id_produto) {
+		this.id_produto = id_produto;
 	}
 
 	public String getNome() {

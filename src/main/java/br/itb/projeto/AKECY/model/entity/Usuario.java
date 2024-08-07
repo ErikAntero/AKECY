@@ -1,5 +1,6 @@
 package br.itb.projeto.AKECY.model.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
@@ -15,22 +16,39 @@ public class Usuario {
 	@Id
 	@GeneratedValue
 		(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long CPF;
+	private String telefone;
 	private String nome;
 	private String email;
 	private String senha;
 	private String nivelAcesso;
-	private byte[] foto;
 	private LocalDateTime dataCadastro;
 	private String statusUsuario;
+
 	
-	
-	// Source -> Generate Getters an Setters...
-	public long getId() {
-		return id;
+	public String getStatusUsuario() {
+		return statusUsuario;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setStatusUsuario(String statusUsuario) {
+		this.statusUsuario = statusUsuario;
+	}
+	public LocalDateTime getDataCadastro() {
+		return dataCadastro;
+	}
+	public void setDataCadastro(LocalDateTime dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+	public long getCPF() {
+		return CPF;
+	}
+	public void setCPF(long cPF) {
+		CPF = cPF;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 	public String getNome() {
 		return nome;
@@ -56,23 +74,16 @@ public class Usuario {
 	public void setNivelAcesso(String nivelAcesso) {
 		this.nivelAcesso = nivelAcesso;
 	}
-	public byte[] getFoto() {
-		return foto;
+	public LocalDate getDataNasc() {
+		return dataNasc;
 	}
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
+	public void setDataNasc(LocalDate dataNasc) {
+		this.dataNasc = dataNasc;
 	}
-	public LocalDateTime getDataCadastro() {
-		return dataCadastro;
-	}
-	public void setDataCadastro(LocalDateTime dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
-	public String getStatusUsuario() {
-		return statusUsuario;
-	}
-	public void setStatusUsuario(String statusUsuario) {
-		this.statusUsuario = statusUsuario;
-	}
+	private LocalDate dataNasc;
 	
 }
+
+	
+	
+	
